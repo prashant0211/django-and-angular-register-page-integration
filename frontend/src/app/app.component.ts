@@ -5,10 +5,11 @@ import {UserService} from './user.service'
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [UserService]
+  providers: [UserService],
 })
 export class AppComponent implements OnInit{
   register;
+  userService: any;
 
   constructor (userService : UserService) { }
   ngOnInit(){
@@ -19,18 +20,18 @@ export class AppComponent implements OnInit{
       email : '',
     };
   }
-  registerUser = {
+  registerUser()  {
     this.userService.registerNewUser(this.register).subscribe(
 
-      response => {
+      (response) => {
 
-        alert('user '+this.register.username+'created')
+        alert('user '+ this.register.username +'created')
       },
 
-      error=> {
+      (error) => {
         console.log('error',error)
       },
-    ),
+    );
 
   }
 }

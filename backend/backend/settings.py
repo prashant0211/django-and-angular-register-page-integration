@@ -25,11 +25,11 @@ SECRET_KEY = '6rt$4*zek!5*5$3j-xoi^m@p@!yd!tcmkf)b1bx#@8#50re+=f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:4200",
+ALLOWED_HOSTS = [
+    
 ]
+
+
 
 # Application definition
 
@@ -54,6 +54,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+]
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:4200",
+    "http://127.0.0.1:4200"
 ]
 
 ROOT_URLCONF = 'backend.urls'

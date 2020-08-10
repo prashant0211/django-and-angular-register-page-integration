@@ -9,12 +9,13 @@ import {UserService} from './user.service'
 })
 export class AppComponent implements OnInit{
   register;
-  userService: any;
+  
 
-  constructor (userService : UserService) { }
+  constructor (private userService : UserService) { }
   ngOnInit(){
 
     this.register = {
+      id:'',
       username : '',
       password : '',
       email : '',
@@ -30,6 +31,7 @@ export class AppComponent implements OnInit{
 
       (error) => {
         console.log('error',error)
+        alert('user ')
       },
     );
 

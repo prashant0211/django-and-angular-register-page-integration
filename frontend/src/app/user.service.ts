@@ -4,13 +4,12 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class UserService {
+  url : string ='http://localhost:8000/api/users/'
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient) {}
 
-  
-  registerNewUser(userData): Observable<any>{
-
-    return this.http.post('http://127.0.0.1:8000/api/users/',userData)
+  registerNewUser(userData): Observable <any> {
+    return this.http.post(this.url, userData)
   }
 
 }
